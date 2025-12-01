@@ -25,8 +25,8 @@
         document.querySelectorAll('.nav-section-content').forEach(content => {
             content.classList.add('hidden');
         });
-        document.querySelectorAll('.nav-section-toggle img').forEach(icon => {
-            icon.style.transform = 'rotate(0deg)';
+        document.querySelectorAll('.nav-section-toggle .toggle-icon').forEach(icon => {
+            icon.textContent = '+';
         });
     }
 
@@ -42,36 +42,75 @@
     document.querySelectorAll('.nav-section-toggle').forEach(toggle => {
         toggle.addEventListener('click', () => {
             const content = toggle.nextElementSibling;
-            const icon = toggle.querySelector('img');
+            const icon = toggle.querySelector('.toggle-icon');
 
             // Toggle the content
             content.classList.toggle('hidden');
 
-            // Rotate the icon
-            icon.style.transform = content.classList.contains('hidden')
-                ? 'rotate(0deg)'
-                : 'rotate(180deg)';
+            // Update the icon text
+            if (icon) {
+                icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+            }
         });
     });
 </script>
 
 <!-- Footer section -->
-<footer class="bg-mckenzie-blue py-8 text-white">
-    <div
-        class="max-w-3xl mx-auto flex flex-col items-center text-center space-y-4 lg:space-y-0 lg:flex-row lg:justify-center lg:max-w-5xl">
-        <div class="lg:mx-4 lg:px-4 lg:relative lg:border-x lg:border-white lg:order-2 mb-2 lg:mb-0">
-            <a href="/" class="group">
-                <img src="svgs/mckenzie-logo-white.svg" alt="City of McKenzie Logo"
-                    class="h-14 w-auto blue-filter-hover" />
+<footer class="bg-[#768692] text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-3 items-start">
+        <!-- Logo & social -->
+        <div class="space-y-6 text-center lg:text-left">
+            <a href="/" class="inline-block">
+                <img src="svgs/Van-Alstyne-Logo.svg" alt="City of Van Alstyne logo" class="h-12 w-auto mx-auto lg:mx-0" />
+            </a>
+            <hr class="max-w-sm mx-auto lg:hidden">
+            <div class="flex justify-center lg:justify-start space-x-4">
+                <a href="#" aria-label="Facebook">
+                    <img src="svgs/nav-social-icons/Facebook-White.svg" alt="Facebook" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="svgs/nav-social-icons/Instagram-White.svg" alt="Instagram" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="X">
+                    <img src="svgs/nav-social-icons/X-White.svg" alt="X" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <img src="svgs/nav-social-icons/Youtube-White.svg" alt="YouTube" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <img src="svgs/nav-social-icons/LinkedIn-White.svg" alt="LinkedIn" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="Search">
+                    <img src="svgs/nav-social-icons/Search-White.svg" alt="Search" class="h-5 w-5" />
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 text-sm font-semibold justify-center lg:justify-start">
+                <a href="#" class="hover:opacity-80 text-center">Accessibility</a>
+                <a href="#" class="hover:opacity-80 text-center">Privacy Policy</a>
+                <a href="#" class="hover:opacity-80 text-center">Contact</a>
+            </div>
+            <hr class="max-w-sm mx-auto lg:hidden">
+        </div>
+
+        <!-- Contact info -->
+        <div class="text-center space-y-3 text-sm sm:text-base">
+            <div class="font-semibold text-lg">(903) 428-5426</div>
+            <div>
+                <div>152 N Main Drive</div>
+                <div>Van Alstyne, TX 75495</div>
+            </div>
+            <a href="mailto:vacedc@cityofvanalstyne.us" class="hover:opacity-80 font-semibold">
+                vacedc@cityofvanalstyne.us
             </a>
         </div>
-        <div class="text-base mt-2 lg:mt-0 lg:order-1">2470 Cedar Street &bull; McKenzie, TN 328201</div>
-        <div class="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 mt-2 lg:mt-0 lg:space-x-2 lg:order-3">
-            <a href="tel:7313522292" class="underline font-semibold hover:text-mckenzie-light-blue">731.352.2292</a>
-            <span class="hidden md:inline">&bull;</span>
-            <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Careers</a>
-            <span class="hidden md:inline">&bull;</span>
-            <a href="#" class="underline font-semibold hover:text-mckenzie-light-blue">Accessibility</a>
+        <hr class="max-w-sm mx-auto lg:hidden w-full">
+
+        <!-- Footer nav -->
+        <div class="text-center lg:text-right space-y-3 text-sm sm:text-base font-semibold">
+            <a href="#" class="block hover:opacity-80">Doing Business Here</a>
+            <a href="#" class="block hover:opacity-80">Properties</a>
+            <a href="#" class="block hover:opacity-80">Living in Van Alstyne</a>
+            <a href="#" class="block hover:opacity-80">About VA CEDC</a>
         </div>
     </div>
 </footer>

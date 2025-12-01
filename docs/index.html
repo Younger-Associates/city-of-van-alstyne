@@ -4,76 +4,236 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>City of McKenzie</title>
+  <title>City of Van Alstyne</title>
   <link href="/output.css" rel="stylesheet" />
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
   <link rel="stylesheet" href="https://use.typekit.net/guf8qbf.css">
 
 </head>
 
-<body class="font-gotham bg-mckenzie-blue">
+<body class="font-gotham bg-white text-[#0F2D52]">
   <div hx-get="/components/nav.html" hx-trigger="load"></div>
 
-  <!-- Hero section with background image and search -->
-  <section class="relative w-full min-h-[70vh] lg:min-h-[75vh] h-[350px] md:h-[500px] lg:h-[600px] flex items-center lg:items-start lg:pt-16 justify-center z-0"
-    style="background-image: url('images/McKenzie_Carroll_Hometown_Hangout.png'); background-size: cover; background-position: center;">
-    <form class="w-11/12 max-w-xl mx-auto">
-      <div class="relative">
-        <input type="text" placeholder="Search"
-          class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-white bg-opacity-90 shadow focus:outline-none focus:ring-2 focus:ring-mckenzie-blue text-lg placeholder-gray-400" />
-        <span class="absolute inset-y-0 right-4 flex items-center">
-          <img src="svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
-        </span>
+  <!-- Hero Banner -->
+  <section class="relative w-full min-h-[70vh] lg:min-h-[75vh] flex items-end justify-center overflow-hidden"
+    style="background-image: url('images/Main-Header-Image.png'); background-size: cover; background-position: center;">
+    <div class="relative z-10 w-full text-white text-left pb-0">
+      <div class="bg-[#001B44]/50 px-6 sm:px-10 lg:px-16 py-6 shadow-2xl">
+        <div class="max-w-6xl mx-auto">
+          <h1 class="text-xl sm:text-3xl font-bold">Van Alstyne: Small Town, Big Opportunity</h1>
+          <p class="text-xs md:text-sm leading-relaxed mt-2">
+            Van Alstyne proves that big things happen in small towns. Positioned in the path of growth, the city connects
+            talent, transportation, and opportunity to create the perfect environment for business success.
+          </p>
+          <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-normal gap-4 pt-4">
+            <a href="#" class="inline-flex items-center justify-center px-6 md:px-10 py-2 rounded-full text-xs md:text-sm text-white shadow-lg w-full sm:w-auto bg-[#CE0037] hover:opacity-90">Optional Relevant Link #1</a>
+            <a href="#" class="inline-flex items-center justify-center px-6 md:px-10 py-2 rounded-full text-xs md:text-sm text-white shadow-lg w-full sm:w-auto bg-[#006EB3] hover:opacity-90">Optional Relevant Link #2</a>
+            <a href="#" class="inline-flex items-center justify-center px-6 md:px-10 py-2 rounded-full text-xs md:text-sm text-white shadow-lg w-full sm:w-auto bg-[#00ACA0] hover:opacity-90">Optional Relevant Link #3</a>
+          </div>
+        </div>
       </div>
-    </form>
-  </section>
-
-  <!-- Services grid section -->
-  <section class="bg-mckenzie-red py-10 lg:py-1 relative overflow-visible lg:-mt-[210px] lg:mb-[98px]">
-    <!-- Emblem (center, only on lg+) -->
-    <div class="hidden lg:block absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-      <img src="svgs/McKenzie%20Emblem.svg" alt="McKenzie Emblem"
-        class="h-44 w-44 mx-auto rounded-full border-8 border-white shadow-lg" />
-    </div>
-    <div class="max-w-6xl mx-auto grid grid-cols-3 lg:grid-cols-7 gap-8 text-center items-center">
-      <!-- Left 3 icons -->
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Meetings%20&%20Events%20Icon.svg" alt="Meetings & Events"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Meetings<br />& Events</span>
-      </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Agendas%20&%20Minutes%20Icon.svg" alt="Agendas & Minutes"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Agendas<br />& Minutes</span>
-      </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Business%20Directory%20Icon.svg" alt="Business Directory"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Business<br />Directory</span>
-      </a>
-      <!-- Spacer for emblem column on lg+ -->
-      <div class="hidden lg:block"></div>
-      <!-- Right 3 icons -->
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Utility%20Payments%20Icon.svg" alt="Utility Payments"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Utility<br />Payments</span>
-      </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/Municipal%20Codes%20Icon.svg" alt="Municipal Codes"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">Municipal<br />Codes</span>
-      </a>
-      <a href="#" class="flex flex-col py-2 items-center group hover:bg-red-400 rounded-md">
-        <img src="svgs/News%20&%20Notices%20Icon.svg" alt="News & Notices"
-          class="h-10 w-10 mb-2" />
-        <span class="text-white font-medium text-base leading-tight">News &<br />Notices</span>
-      </a>
     </div>
   </section>
 
-  <div hx-get="/components/proud-home.html" hx-trigger="load"></div>
+  <!-- Learn More About Van Alstyne -->
+  <section class="bg-[#7C8B9D] py-14 lg:py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-center text-white text-2xl sm:text-3xl font-semibold mb-10">Learn More About Van Alstyne</h2>
+      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        <article class="bg-[#F1CEC5] text-[#971B2F] rounded-3xl p-8 flex flex-col h-full shadow-lg">
+          <div class="flex justify-center mb-2">
+            <img src="svgs/learn-more-icons/Available-Properties-Icon.svg" alt="Available properties icon" class="h-28 w-auto">
+          </div>
+          <h3 class="text-xl font-bold text-center">Available Properties</h3>
+          <p class="text-sm text-center mt-2 flex-1">View our available industrial, commercial, and retail sites in Van Alstyne.</p>
+          <div class="mt-3">
+            <a href="#" class="inline-flex w-full justify-center rounded-full bg-[#971B2F] text-white text-sm font-semibold py-2">Learn More</a>
+          </div>
+        </article>
+        <article class="bg-[#CCD6EB] text-[#003A70] rounded-3xl p-8 flex flex-col h-full shadow-lg">
+          <div class="flex justify-center mb-2">
+            <img src="svgs/learn-more-icons/Target-Industries-Icon.svg" alt="Target industries icon" class="h-28 w-auto">
+          </div>
+          <h3 class="text-xl font-bold text-center">Target Industries</h3>
+          <p class="text-sm text-center mt-2 flex-1">Learn more about our need for retail and industrial employers.</p>
+          <div class="mt-3">
+            <a href="#" class="inline-flex w-full justify-center rounded-full bg-[#003A70] text-white text-sm font-semibold py-2">Learn More</a>
+          </div>
+        </article>
+        <article class="bg-[#C9E9E7] text-[#007672] rounded-3xl p-8 flex flex-col h-full shadow-lg sm:col-span-2 sm:justify-self-center md:col-span-1 md:justify-self-auto">
+          <div class="flex justify-center mb-2">
+            <img src="svgs/learn-more-icons/Business-Incentives-Icon.svg" alt="Business incentives icon" class="h-28 w-auto">
+          </div>
+          <h3 class="text-xl font-bold text-center">Business Incentives</h3>
+          <p class="text-sm text-center mt-2 flex-1">Find out more about local and state programs and grants.</p>
+          <div class="mt-3">
+            <a href="#" class="inline-flex w-full justify-center rounded-full bg-[#007672] text-white text-sm font-semibold py-2">Learn More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gateway to Growth -->
+  <section class="bg-[#F4F6FA] py-16">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col lg:flex-row gap-10 items-center">
+      <div class="w-full lg:w-1/2 text-[#0F2D52] space-y-5">
+        <h2 class="text-2xl sm:text-3xl font-bold">Gateway to Growth in the Texoma Region</h2>
+        <p class="text-sm sm:text-base leading-relaxed">
+          Van Alstyne sits at the heart of a thriving labor region that spans Collin, Cooke, Denton, Fannin, and Grayson
+          counties in Texas, along with Bryan County in Oklahoma. With seamless connections to Dallas to the south and Oklahoma
+          to the north, employers can enjoy access to a broad, skilled workforce and take advantage of strategic regional connectivity.
+        </p>
+        <a href="#"
+          class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-[#CE0037] text-white font-semibold text-sm sm:text-base w-max shadow-lg">
+          View Our Map Room
+        </a>
+      </div>
+      <div class="w-full lg:w-1/2 rounded-3xl overflow-hidden shadow-lg border border-[#C6D4E8]">
+        <div class="relative w-full" style="padding-bottom: 65%;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53279.07796113162!2d-96.60037339726563!3d33.42474673888376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c6f6070904a37%3A0xa41b060b79cad3c8!2sVan%20Alstyne%2C%20TX!5e0!3m2!1sen!2sus!4v1764616078736!5m2!1sen!2sus"
+            class="absolute inset-0 w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Van Alstyne Labor Region -->
+  <section class="bg-[#003A70] text-white py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center space-y-10">
+      <div class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Van Alstyne Labor Region</h2>
+        <p class="text-sm sm:text-base max-w-3xl mx-auto">
+          Counties included in the Van Alstyne Labor Region are: Bryan County, OK; Collin County, TX; Cooke County, TX;
+          Fannin County, TX; and Grayson County, TX.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center max-w-5xl mx-auto">
+        <article class="flex flex-col items-center my-2 px-2 w-1/2 min-w-[166px] md:w-1/3 lg:w-1/5">
+          <img src="svgs/labor-icons/PopulationIcon.svg" alt="Population icon" class="h-24 w-24 lg:h-28 lg:w-28">
+          <div class="mt-1 lg:mt-2">
+            <p class="text-2xl font-bold">2,612,195</p>
+            <p class="text-sm">2025 Estimated Population</p>
+          </div>
+        </article>
+        <article class="flex flex-col items-center my-2 px-2 w-1/2 min-w-[166px] md:w-1/3 lg:w-1/5">
+          <img src="svgs/labor-icons/WorkforceIcon.svg" alt="Briefcase icon" class="h-24 w-24 lg:h-28 lg:w-28">
+          <div class="mt-1 lg:mt-2">
+            <p class="text-2xl font-bold">1,471,574</p>
+            <p class="text-sm">Total Workforce</p>
+          </div>
+        </article>
+        <article class="flex flex-col items-center my-2 px-2 w-1/2 min-w-[166px] md:w-1/3 lg:w-1/5">
+          <img src="svgs/labor-icons/UnemploymentIcon.svg" alt="Target icon" class="h-24 w-24 lg:h-28 lg:w-28">
+          <div class="mt-1 lg:mt-2">
+            <p class="text-2xl font-bold">3.7%</p>
+            <p class="text-sm">Unemployed Workforce</p>
+          </div>
+        </article>
+        <article class="flex flex-col items-center my-2 px-2 w-1/2 min-w-[166px] md:w-1/3 lg:w-1/5">
+          <img src="svgs/labor-icons/IncomeIcon.svg" alt="Income icon" class="h-24 w-24 lg:h-28 lg:w-28">
+          <div class="mt-1 lg:mt-2">
+            <p class="text-2xl font-bold">$148,768</p>
+            <p class="text-sm">Average Household Income</p>
+          </div>
+        </article>
+        <article class="flex flex-col items-center my-2 px-2 w-1/2 min-w-[166px] md:w-1/3 lg:w-1/5">
+          <img src="svgs/labor-icons/TravelTimeIcon.svg" alt="Travel time icon" class="h-24 w-24 lg:h-28 lg:w-28">
+          <div class="mt-1 lg:mt-2">
+            <p class="text-2xl font-bold">30 Min</p>
+            <p class="text-sm">Average Travel Time to Work</p>
+          </div>
+        </article>
+      </div>
+      <div>
+        <a href="#" class="inline-flex items-center justify-center px-8 lg:px-12 py-2 rounded-full bg-[#1B7BCB] text-white font-semibold shadow-lg">
+          Explore the Numbers
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's happening -->
+  <section class="bg-[#D0D3D4] py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-center text-[#0F2D52] text-2xl sm:text-3xl font-semibold mb-10">What’s happening in Van Alstyne?</h2>
+      <div class="space-y-6">
+        <article class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div class="md:w-1/3">
+            <img src="images/card-image-1.png" alt="Downtown Van Alstyne aerial"
+              class="w-full h-56 md:h-full object-cover">
+          </div>
+          <div class="md:w-2/3 p-6 sm:p-8 flex flex-col">
+            <div class="flex-1 space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-[#003A70]">News Article or Event Title #1</h3>
+              <p class="text-xs font-semibold text-[#006EB3]">August 20, 2025 • 10:00 AM</p>
+              <p class="text-sm text-[#0F2D52] leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="pt-4">
+              <a href="#"
+                class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#CE0037] text-white text-sm font-semibold shadow">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div class="md:w-1/3">
+            <img src="images/card-image-2.png" alt="Van Alstyne mural"
+              class="w-full h-56 md:h-full object-cover">
+          </div>
+          <div class="md:w-2/3 p-6 sm:p-8 flex flex-col">
+            <div class="flex-1 space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-[#003A70]">News Article or Event Title #2</h3>
+              <p class="text-xs font-semibold text-[#006EB3]">August 20, 2025 • 10:00 AM</p>
+              <p class="text-sm text-[#0F2D52] leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="pt-4">
+              <a href="#"
+                class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#CE0037] text-white text-sm font-semibold shadow">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <div class="md:w-1/3">
+            <img src="images/card-image-3.png" alt="Local community event"
+              class="w-full h-56 md:h-full object-cover">
+          </div>
+          <div class="md:w-2/3 p-6 sm:p-8 flex flex-col">
+            <div class="flex-1 space-y-3">
+              <h3 class="text-xl sm:text-2xl font-bold text-[#003A70]">News Article or Event Title #3</h3>
+              <p class="text-xs font-semibold text-[#006EB3]">August 20, 2025 • 10:00 AM</p>
+              <p class="text-sm text-[#0F2D52] leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="pt-4">
+              <a href="#"
+                class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-[#CE0037] text-white text-sm font-semibold shadow">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="pt-8 flex justify-center">
+        <a href="#"
+          class="inline-flex items-center justify-center px-8 lg:px-16 py-2 rounded-full bg-[#003A70] text-white shadow-lg">
+          What Else is Happening?
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer -->
   <div hx-get="/components/footer.html" hx-trigger="load"></div>
