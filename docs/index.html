@@ -5,14 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>City of Van Alstyne</title>
-  <link href="/output.css" rel="stylesheet" />
+  <link href="./output.css" rel="stylesheet" />
   <script src="https://unpkg.com/htmx.org@1.9.2"></script>
   <link rel="stylesheet" href="https://use.typekit.net/guf8qbf.css">
 
 </head>
 
 <body class="font-gotham bg-white text-[#0F2D52]">
-  <div hx-get="/components/nav.html" hx-trigger="load"></div>
+  <div hx-get="components/nav.html" hx-trigger="load"></div>
 
   <!-- Hero Banner -->
   <section class="relative w-full min-h-[70vh] lg:min-h-[75vh] flex items-end justify-center overflow-hidden"
@@ -236,4 +236,4 @@
   </section>
 
   <!-- Footer -->
-  <div hx-get="/components/footer.html" hx-trigger="load"></div>
+  <div hx-get="components/footer.html" hx-trigger="load"></div>
