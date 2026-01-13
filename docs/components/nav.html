@@ -33,10 +33,13 @@
                 <img src="svgs/Van-Alstyne-Logo.svg" alt="City of Van Alstyne Logo"
                     class="h-12 w-auto xl:h-16" />
             </a>
-            <button id="menu-toggle"
-                class="ml-4 focus:outline-none z-50 lg:hidden h-12 w-12 rounded-full bg-[#003A70] flex items-center justify-center shadow-lg">
-                <img id="menu-icon" src="svgs/Menu.svg" alt="Menu" class="h-5 w-5" />
-            </button>
+            <div class="flex items-center gap-3 lg:hidden">
+                <a href="#contact" class="hidden md:block bg-[#003A70] text-white px-5 py-2 rounded-full font-semibold text-sm hover:bg-[#002a52] transition-colors">Contact Us</a>
+                <button id="menu-toggle"
+                    class="focus:outline-none z-50 h-12 w-12 rounded-full bg-[#003A70] flex items-center justify-center shadow-lg">
+                    <img id="menu-icon" src="svgs/Menu.svg" alt="Menu" class="h-5 w-5" />
+                </button>
+            </div>
         </div>
         <ul class="hidden lg:flex items-center space-x-6 xl:space-x-10 flex-1 justify-end mt-4 lg:mt-0 font-semibold">
             <li class="relative group desktop-dropdown-parent">
@@ -96,9 +99,10 @@
             </li>
         </ul>
     </div>
+    <!-- Mobile Menu (small screens only) -->
     <div id="nav-menu-content"
-        class="w-full flex-col items-center space-y-8 transition-all duration-300 ease-in-out opacity-0 max-h-0 pointer-events-none lg:hidden bg-[#003E7E] text-white">
-        <div class="flex flex-col justify-start w-full px-6 py-10 space-y-8">
+        class="w-full flex-col items-center transition-all duration-300 ease-in-out opacity-0 max-h-0 pointer-events-none md:hidden bg-[#003E7E] text-white flex-1">
+        <div class="flex flex-col justify-between w-full px-6 py-10 h-full min-h-[calc(100vh-140px)]">
             <ul class="flex flex-col space-y-6">
                 <li class="w-full">
                     <button
@@ -164,6 +168,70 @@
                         class="h-6 w-6" /></a>
                 <a href="#" aria-label="Search"><img src="svgs/nav-social-icons/Search-White.svg" alt="Search"
                         class="h-6 w-6" /></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tablet Side Nav (md to lg screens) -->
+    <div id="tablet-nav-overlay" class="hidden md:block lg:hidden fixed inset-0 bg-black/30 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <div id="tablet-nav-panel" class="hidden md:block lg:hidden fixed top-0 right-0 h-full w-80 bg-[#003A70] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+        <div class="p-6 pt-8 flex flex-col min-h-full">
+            <ul class="space-y-0 flex-1">
+                <li>
+                    <button class="tablet-nav-toggle w-full flex items-center justify-between py-3 text-white font-semibold text-lg focus:outline-none border-b border-white/30">
+                        <span>Doing Business Here</span>
+                        <span class="tablet-toggle-icon text-white text-xl font-bold">−</span>
+                    </button>
+                    <ul class="tablet-nav-content py-3 space-y-2 pl-0">
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Demographics</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Workforce</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Higher Education &amp; Training</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Map Room</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Utilities &amp; Taxes</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Grant Programs &amp; Incentives</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="tablet-nav-toggle w-full flex items-center justify-between py-3 text-white font-semibold text-lg focus:outline-none border-b border-white/30">
+                        <span>Properties</span>
+                        <span class="tablet-toggle-icon text-white text-xl font-bold">+</span>
+                    </button>
+                    <ul class="tablet-nav-content hidden py-3 space-y-2 pl-0">
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Available Sites</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Available Buildings</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Downtown Opportunities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="tablet-nav-toggle w-full flex items-center justify-between py-3 text-white font-semibold text-lg focus:outline-none border-b border-white/30">
+                        <span>Living in Van Alstyne</span>
+                        <span class="tablet-toggle-icon text-white text-xl font-bold">+</span>
+                    </button>
+                    <ul class="tablet-nav-content hidden py-3 space-y-2 pl-0">
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Community Profile</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Schools &amp; Education</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Quality of Life</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="tablet-nav-toggle w-full flex items-center justify-between py-3 text-white font-semibold text-lg focus:outline-none border-b border-white/30">
+                        <span>About VA CEDC</span>
+                        <span class="tablet-toggle-icon text-white text-xl font-bold">+</span>
+                    </button>
+                    <ul class="tablet-nav-content hidden py-3 space-y-2 pl-0">
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Board &amp; Staff</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Strategic Plan</a></li>
+                        <li><a href="#" class="block text-white/90 hover:text-white text-base">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="flex justify-center space-x-5 py-8 mt-auto">
+                <a href="#" aria-label="Facebook"><img src="svgs/nav-social-icons/Facebook-White.svg" alt="Facebook" class="h-6 w-6" /></a>
+                <a href="#" aria-label="Instagram"><img src="svgs/nav-social-icons/Instagram-White.svg" alt="Instagram" class="h-6 w-6" /></a>
+                <a href="#" aria-label="X"><img src="svgs/nav-social-icons/X-White.svg" alt="X" class="h-6 w-6" /></a>
+                <a href="#" aria-label="YouTube"><img src="svgs/nav-social-icons/Youtube-White.svg" alt="YouTube" class="h-6 w-6" /></a>
+                <a href="#" aria-label="LinkedIn"><img src="svgs/nav-social-icons/LinkedIn-White.svg" alt="LinkedIn" class="h-6 w-6" /></a>
+                <a href="#" aria-label="Search"><img src="svgs/nav-social-icons/Search-White.svg" alt="Search" class="h-6 w-6" /></a>
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  height: 20px;
+  height: 40px; /* Increased to cover mt-8 (32px) gap plus buffer */
   background: transparent;
 }
 
