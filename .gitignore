@@ -2,3 +2,48 @@
 node_modules/
 thoughts/handoffs/*
 .claude/*
+
+# ===========================================
+# ExpressionEngine - Ignore core, track custom files
+# ===========================================
+
+# Ignore the EE download/guide files
+ExpressionEngineFiles/EE-Guide.md
+
+# Ignore entire EE core installation
+ExpressionEngineFiles/ExpressionEngine7.5.19/*
+
+# --- Track our custom templates ---
+!ExpressionEngineFiles/ExpressionEngine7.5.19/system/
+ExpressionEngineFiles/ExpressionEngine7.5.19/system/*
+!ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/
+ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/*
+!ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/templates/
+
+# --- Track our config example (not the actual config.php) ---
+!ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/config/
+ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/config/*
+!ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/config/config.php.example
+
+# --- Track our assets ---
+!ExpressionEngineFiles/ExpressionEngine7.5.19/assets/
+
+# --- Track nginx config example ---
+!ExpressionEngineFiles/nginx-ee.conf.example
+
+# ===========================================
+# General exclusions
+# ===========================================
+
+# Database backups and exports
+*.sql
+*.sql.gz
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db

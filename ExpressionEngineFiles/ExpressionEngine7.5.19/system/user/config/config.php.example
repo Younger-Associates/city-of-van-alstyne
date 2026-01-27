@@ -1,0 +1,51 @@
+<?php
+/**
+ * ExpressionEngine Config File - City of Van Alstyne / VA CEDC
+ *
+ * IMPORTANT: Copy this file to config.php and fill in your database credentials.
+ * The config.php file should NOT be committed to version control.
+ */
+
+$config['app_version'] = '7.5.19';
+$config['encryption_key'] = ''; // Will be generated during installation
+$config['site_name'] = 'Van Alstyne CEDC';
+
+// Database settings - fill these in
+$config['database'] = array(
+    'expressionengine' => array(
+        'hostname' => 'localhost',
+        'database' => 'vacedc_ee',           // Change to your DB name
+        'username' => 'vacedc_user',         // Change to your DB username
+        'password' => 'YOUR_PASSWORD_HERE',  // Change to your DB password
+        'dbprefix' => 'exp_',
+        'char_set' => 'utf8mb4',
+        'dbcollat' => 'utf8mb4_unicode_ci',
+        'port'     => ''
+    ),
+);
+
+// Site URL settings - UPDATE THESE FOR YOUR ENVIRONMENT
+// Staging:
+$config['site_url'] = 'https://van-alstyne.younger.host/';
+$config['cp_url'] = 'https://van-alstyne.younger.host/admin.php';
+
+// Production (uncomment these and comment out staging when going live):
+// $config['site_url'] = 'https://vaedc.com/';
+// $config['cp_url'] = 'https://vaedc.com/admin.php';
+
+// Path settings (adjust for your server)
+// $config['base_path'] = '/var/www/vacedc/public_html/';
+// $config['base_url'] = 'https://vacedc.cityofvanalstyne.us/';
+
+// Remove index.php from URLs (requires nginx rewrite rules - see nginx-ee.conf.example)
+$config['index_page'] = '';
+
+// Session settings
+$config['cookie_domain'] = '';
+$config['cookie_path'] = '/';
+
+// Debug mode (set to 'y' during development, 'n' for production)
+$config['debug'] = 'n';
+$config['show_profiler'] = 'n';
+
+// EOF

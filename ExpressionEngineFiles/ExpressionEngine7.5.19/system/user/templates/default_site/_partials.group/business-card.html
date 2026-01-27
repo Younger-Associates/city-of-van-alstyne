@@ -1,0 +1,46 @@
+{!-- Business Directory Card --}
+{!-- Parameters: business_name, category, contact_name, email, phone, website, address_line1, address_line2, logo_url --}
+{!-- Social parameters: facebook_url, instagram_url, linkedin_url, youtube_url, x_url, tiktok_url --}
+
+<div class="flex flex-col md:flex-row bg-neutral-100 rounded-lg md:rounded-xl p-5 my-4 mx-auto sm:max-w-[350px] sm:min-w-[350px] md:max-w-none md:w-full justify-center align-middle">
+    <div class="h-full mb-4 md:mb-0 md:mr-4 bg-white rounded-lg md:rounded-xl max-w-[220px] mx-auto">
+      <img src="{if embed:logo_url}{embed:logo_url}{if:else}/assets/images/YA-Logo-Full-Color.png{/if}" alt="{embed:business_name} Logo" class="rounded-full mx-auto my-auto" />
+    </div>
+    <div class="flex-grow flex flex-col justify-around">
+      <div class="flex justify-between items-center mb-2">
+        <div>
+          <div class="text-xl font-bold text-[#003A70]">{embed:business_name}</div>
+          <div class="text-md text-[#CE0037]">{embed:category}</div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-2 md:mb-0">
+          <div class="text-xs font-bold uppercase">Point Of Contact</div>
+          <div>{embed:contact_name}</div>
+          <div><a href="mailto:{embed:email}" class="text-[#0F2D52] hover:underline">{embed:email}</a></div>
+          <a href="mailto:{embed:email}" class="inline-block bg-[#003A70] text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-[#CE0037] text-center">Email</a>
+        </div>
+        <div class="mb-2 md:mb-0">
+          <div class="text-xs font-bold uppercase">Contact Information</div>
+          <div><a href="tel:{embed:phone}" class="text-[#0F2D52] hover:underline">{embed:phone}</a></div>
+          <div><a href="{embed:website}" class="text-[#0F2D52] hover:underline" target="_blank">{embed:website}</a></div>
+          <a href="{embed:website}" target="_blank" class="inline-block bg-[#003A70] text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-[#CE0037] text-center">Website</a>
+        </div>
+        <div>
+          <div class="text-xs font-bold uppercase">Address</div>
+          <div>{embed:address_line1}</div>
+          <div>{embed:address_line2}</div>
+          <a href="https://maps.google.com/?q={embed:address_line1}+{embed:address_line2}" target="_blank" class="inline-block bg-[#003A70] text-white rounded-full px-4 py-2 uppercase text-xs mt-2 w-full max-w-52 md:max-w-none hover:bg-[#CE0037] text-center">Directions</a>
+        </div>
+      </div>
+      <div class="flex mt-4 space-x-2 items-center">
+        <div class="uppercase text-[#0F2D52] text-xs font-bold">Socials</div>
+        {if embed:facebook_url}<a href="{embed:facebook_url}" target="_blank" aria-label="Facebook"><img src="/assets/svgs/icons/facebook-blue.svg" class="h-7 w-7" alt="Facebook" /></a>{/if}
+        {if embed:instagram_url}<a href="{embed:instagram_url}" target="_blank" aria-label="Instagram"><img src="/assets/svgs/icons/instagram-blue.svg" class="h-7 w-7" alt="Instagram" /></a>{/if}
+        {if embed:linkedin_url}<a href="{embed:linkedin_url}" target="_blank" aria-label="LinkedIn"><img src="/assets/svgs/icons/linkedin-blue.svg" class="h-7 w-7" alt="LinkedIn" /></a>{/if}
+        {if embed:youtube_url}<a href="{embed:youtube_url}" target="_blank" aria-label="YouTube"><img src="/assets/svgs/icons/youtube-blue.svg" class="h-7 w-7" alt="YouTube" /></a>{/if}
+        {if embed:x_url}<a href="{embed:x_url}" target="_blank" aria-label="X"><img src="/assets/svgs/icons/x-blue.svg" class="h-7 w-7" alt="X" /></a>{/if}
+        {if embed:tiktok_url}<a href="{embed:tiktok_url}" target="_blank" aria-label="TikTok"><img src="/assets/svgs/icons/tiktok-blue.svg" class="h-7 w-7" alt="TikTok" /></a>{/if}
+      </div>
+    </div>
+  </div>

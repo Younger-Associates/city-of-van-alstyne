@@ -1,0 +1,111 @@
+{layout="_layouts/interior" page_title="Business Directory" title="Business Directory"}
+
+<section id="interior-body" class="max-w-4xl mx-auto px-6 py-8 lg:py-12 xl:py-14 bg-white">
+  <div>
+    <h2 class="text-center text-2xl font-bold text-[#003A70] mb-4">Welcome to the City of Van Alstyne Business Directory</h2>
+    <p class="text-center text-[#0F2D52]">Search for local businesses by name or filter by category. Support your local Van Alstyne businesses!</p>
+  </div>
+
+  <hr class="my-6">
+
+  <form class="flex flex-col sm:flex-row w-full">
+    <div class="relative flex-grow">
+      <input type="text" placeholder="Search businesses..."
+        class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-neutral-100 bg-opacity-90 shadow focus:outline-none focus:ring-1 focus:ring-[#003A70] text-lg placeholder-gray-400" />
+      <span class="absolute inset-y-0 right-4 flex items-center">
+        <img src="/assets/svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
+      </span>
+    </div>
+    <button type="button" class="flex justify-center items-center mt-4 sm:mt-0 sm:ml-4 group">
+      <div class="h-8 relative">
+        <img src="/assets/svgs/filter-icon.svg" alt="Filter" class="h-8 w-8 group-hover:hidden" />
+        <img src="/assets/svgs/filter-icon-hover.svg" alt="Filter Hover" class="h-8 w-8 hidden group-hover:block" />
+      </div>
+      <div class="text-[#003A70] ml-2 text-lg font-medium">Filter</div>
+    </button>
+  </form>
+
+  <div class="business-directory mt-8">
+    {!--
+      This section would use EE channel entries to loop through businesses.
+      Example with channel entries:
+
+      {exp:channel:entries channel="businesses" orderby="title" sort="asc" dynamic="no"}
+        {if switch == ""}
+          <div id="{title:first_letter}-businesses" class="flex flex-col w-full mt-6">
+            <div class="text-xl font-bold text-[#003A70]">{title:first_letter}</div>
+            <hr class="flex-grow border-t-1 border-[#003A70] !my-0" />
+          </div>
+        {/if}
+        {embed="_partials/business-card"
+          business_name="{title}"
+          category="{business_category}"
+          contact_name="{contact_name}"
+          email="{contact_email}"
+          phone="{phone}"
+          website="{website}"
+          address_line1="{address_line1}"
+          address_line2="{city}, TX {zip}"
+          logo_url="{logo}"
+          facebook_url="{facebook}"
+          instagram_url="{instagram}"
+        }
+      {/exp:channel:entries}
+    --}
+
+    <!-- Example Static Content - Replace with EE channel entries above -->
+    <div id="A-businesses" class="flex flex-col w-full mt-6">
+      <div class="text-xl font-bold text-[#003A70]">A</div>
+      <hr class="flex-grow border-t-1 border-[#003A70] !my-0" />
+    </div>
+
+    <div class="flex flex-wrap gap-2 justify-center md:gap-0">
+      {embed="_partials/business-card"
+        business_name="ABC Company"
+        category="Professional Services"
+        contact_name="John Smith"
+        email="john@abccompany.com"
+        phone="903-555-1234"
+        website="https://abccompany.com"
+        address_line1="123 Main Street"
+        address_line2="Van Alstyne, TX 75495"
+        facebook_url="https://facebook.com"
+        instagram_url="https://instagram.com"
+      }
+
+      {embed="_partials/business-card"
+        business_name="Acme Industries"
+        category="Manufacturing"
+        contact_name="Jane Doe"
+        email="jane@acme.com"
+        phone="903-555-5678"
+        website="https://acmeindustries.com"
+        address_line1="456 Industrial Blvd"
+        address_line2="Van Alstyne, TX 75495"
+        linkedin_url="https://linkedin.com"
+      }
+    </div>
+
+    <div id="B-businesses" class="flex flex-col w-full mt-6">
+      <div class="text-xl font-bold text-[#003A70]">B</div>
+      <hr class="flex-grow border-t-1 border-[#003A70] !my-0" />
+    </div>
+
+    <div class="flex flex-wrap gap-2 justify-center md:gap-0">
+      {embed="_partials/business-card"
+        business_name="Baker's Corner"
+        category="Food & Beverage"
+        contact_name="Sarah Baker"
+        email="info@bakerscorner.com"
+        phone="903-555-9012"
+        website="https://bakerscorner.com"
+        address_line1="789 Commerce St"
+        address_line2="Van Alstyne, TX 75495"
+        facebook_url="https://facebook.com"
+        instagram_url="https://instagram.com"
+        tiktok_url="https://tiktok.com"
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,165 @@
+<!-- Footer section -->
+<footer class="bg-[#768692] text-white py-10">
+    <div class="max-w-6xl mx-auto px-6 grid gap-10 lg:grid-cols-3 items-start">
+        <!-- Logo & social -->
+        <div class="space-y-6 text-center lg:text-left">
+            <a href="/" class="inline-block">
+                <img src="/assets/svgs/Van-Alstyne-Logo.svg" alt="City of Van Alstyne logo" class="h-12 w-auto mx-auto lg:mx-0" />
+            </a>
+            <hr class="max-w-sm mx-auto lg:hidden">
+            <div class="flex justify-center lg:justify-start space-x-4">
+                <a href="#" aria-label="Facebook">
+                    <img src="/assets/svgs/nav-social-icons/Facebook-White.svg" alt="Facebook" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="/assets/svgs/nav-social-icons/Instagram-White.svg" alt="Instagram" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="X">
+                    <img src="/assets/svgs/nav-social-icons/X-White.svg" alt="X" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <img src="/assets/svgs/nav-social-icons/Youtube-White.svg" alt="YouTube" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <img src="/assets/svgs/nav-social-icons/LinkedIn-White.svg" alt="LinkedIn" class="h-5 w-5" />
+                </a>
+                <a href="#" aria-label="Search">
+                    <img src="/assets/svgs/nav-social-icons/Search-White.svg" alt="Search" class="h-5 w-5" />
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:space-x-6 space-y-2 sm:space-y-0 text-sm font-semibold justify-center lg:justify-start">
+                <a href="/accessibility" class="hover:opacity-80 text-center">Accessibility</a>
+                <a href="/privacy" class="hover:opacity-80 text-center">Privacy Policy</a>
+                <a href="/contact" class="hover:opacity-80 text-center">Contact</a>
+            </div>
+            <hr class="max-w-sm mx-auto lg:hidden">
+        </div>
+
+        <!-- Contact info -->
+        <div class="text-center space-y-3 text-sm sm:text-base">
+            <div class="font-semibold text-lg">(903) 428-5426</div>
+            <div>
+                <div>152 N Main Drive</div>
+                <div>Van Alstyne, TX 75495</div>
+            </div>
+            <a href="mailto:vacedc@cityofvanalstyne.us" class="hover:opacity-80 font-semibold">
+                vacedc@cityofvanalstyne.us
+            </a>
+        </div>
+        <hr class="max-w-sm mx-auto lg:hidden w-full">
+
+        <!-- Footer nav -->
+        <div class="text-center lg:text-right space-y-3 text-sm sm:text-base font-semibold">
+            <a href="/doing-business" class="block hover:opacity-80">Doing Business Here</a>
+            <a href="/properties" class="block hover:opacity-80">Properties</a>
+            <a href="/living" class="block hover:opacity-80">Living in Van Alstyne</a>
+            <a href="/about" class="block hover:opacity-80">About VA CEDC</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuIcon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('main-nav');
+    const navMenuContent = document.getElementById('nav-menu-content');
+    const tabletNavPanel = document.getElementById('tablet-nav-panel');
+    const tabletNavOverlay = document.getElementById('tablet-nav-overlay');
+    let menuOpen = false;
+
+    function isTablet() {
+        return window.innerWidth >= 768 && window.innerWidth < 1024;
+    }
+
+    function openMobileMenu() {
+        navMenu.classList.add('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
+        navMenuContent.classList.remove('opacity-0', 'max-h-0', 'pointer-events-none');
+        navMenuContent.classList.add('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
+        menuIcon.src = '/assets/svgs/x-icon.svg';
+        menuOpen = true;
+    }
+
+    function closeMobileMenu() {
+        navMenu.classList.remove('fixed', 'inset-0', 'min-h-screen', 'backdrop-blur');
+        navMenuContent.classList.remove('opacity-100', 'max-h-[1000px]', 'pointer-events-auto');
+        navMenuContent.classList.add('opacity-0', 'max-h-0', 'pointer-events-none');
+        menuIcon.src = '/assets/svgs/Menu.svg';
+        menuOpen = false;
+
+        document.querySelectorAll('.nav-section-content').forEach(content => {
+            content.classList.add('hidden');
+        });
+        document.querySelectorAll('.nav-section-toggle .toggle-icon').forEach(icon => {
+            icon.textContent = '+';
+        });
+    }
+
+    function openTabletNav() {
+        tabletNavPanel.classList.remove('translate-x-full');
+        tabletNavPanel.classList.add('translate-x-0');
+        tabletNavOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        tabletNavOverlay.classList.add('opacity-100', 'pointer-events-auto');
+        menuIcon.src = '/assets/svgs/x-icon.svg';
+        menuOpen = true;
+    }
+
+    function closeTabletNav() {
+        tabletNavPanel.classList.remove('translate-x-0');
+        tabletNavPanel.classList.add('translate-x-full');
+        tabletNavOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        tabletNavOverlay.classList.add('opacity-0', 'pointer-events-none');
+        menuIcon.src = '/assets/svgs/Menu.svg';
+        menuOpen = false;
+    }
+
+    menuToggle.addEventListener('click', () => {
+        if (menuOpen) {
+            if (isTablet()) {
+                closeTabletNav();
+            } else {
+                closeMobileMenu();
+            }
+        } else {
+            if (isTablet()) {
+                openTabletNav();
+            } else {
+                openMobileMenu();
+            }
+        }
+    });
+
+    if (tabletNavOverlay) {
+        tabletNavOverlay.addEventListener('click', closeTabletNav);
+    }
+
+    document.querySelectorAll('.nav-section-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            const icon = toggle.querySelector('.toggle-icon');
+            content.classList.toggle('hidden');
+            if (icon) {
+                icon.textContent = content.classList.contains('hidden') ? '+' : '-';
+            }
+        });
+    });
+
+    document.querySelectorAll('.tablet-nav-toggle').forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const content = toggle.nextElementSibling;
+            const icon = toggle.querySelector('.tablet-toggle-icon');
+            content.classList.toggle('hidden');
+            if (icon) {
+                icon.textContent = content.classList.contains('hidden') ? '+' : '−';
+            }
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        if (menuOpen) {
+            if (window.innerWidth >= 1024) {
+                closeMobileMenu();
+                closeTabletNav();
+            }
+        }
+    });
+</script>
