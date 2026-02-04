@@ -28,6 +28,14 @@ ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/config/*
 # --- Track our assets ---
 !ExpressionEngineFiles/ExpressionEngine7.5.19/assets/
 
+# --- Ignore add-on download/zip folders ---
+ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/addons/Wygwam-*/
+
+# --- Ignore working notes and example files ---
+matts-todos.md
+example-*.html
+example-*.md
+
 # --- Track nginx config example ---
 !ExpressionEngineFiles/nginx-ee.conf.example
 
