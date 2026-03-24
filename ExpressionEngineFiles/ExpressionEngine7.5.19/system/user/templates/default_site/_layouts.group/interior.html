@@ -7,16 +7,17 @@
   <title>{if layout:title}{layout:title} | {/if}Van Alstyne CEDC</title>
   {if layout:meta_description}<meta name="description" content="{layout:meta_description}">{/if}
   <link href="/assets/css/output.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.typekit.net/guf8qbf.css">
+  <link href="/assets/fonts/core-sans-c.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet" />
   {layout:head}
 </head>
 
-<body class="font-gotham bg-white text-[#0F2D52]">
+<body class="font-core-sans bg-white text-[#0F2D52]">
   {embed="_partials/nav"}
 
   <!-- Interior Page Header -->
   <header class="relative overflow-hidden">
-    <img src="{if layout:hero_image}{layout:hero_image}{if:else}/assets/images/InteriorHeader.png{/if}" alt="Van Alstyne skyline" class="w-full h-72 md:h-80 object-cover">
+    <img src="{if layout:hero_image}{layout:hero_image}{if:else}/assets/images/InteriorHeader.png{/if}" alt="Van Alstyne skyline" class="w-full h-[200px] object-cover">
     <div class="absolute inset-0 bg-gradient-to-r from-[#001B44]/75 via-[#001B44]/55 to-transparent"></div>
     <div class="absolute inset-0 flex items-center justify-center px-6">
       <h1 class="text-white text-3xl md:text-4xl font-bold text-center">{layout:page_title}</h1>

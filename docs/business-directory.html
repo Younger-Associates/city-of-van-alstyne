@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="font-gotham bg-white text-[#0F2D52]">
+<body class="font-core-sans bg-white text-[#0F2D52]">
   <div hx-get="/components/nav.html" hx-trigger="load"></div>
 
   <header class="relative overflow-hidden">
@@ -30,7 +30,7 @@
     <form class="flex flex-col sm:flex-row w-full">
       <div class="relative flex-grow">
         <input type="text" placeholder="Search"
-          class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-neutral-100 bg-opacity-90 shadow focus:outline-none focus:ring-1 focus:ring-mckenzie-blue text-lg placeholder-gray-400" />
+          class="w-full rounded-full py-3 pl-6 pr-12 text-gray-700 bg-neutral-100 bg-opacity-90 shadow focus:outline-none focus:ring-1 focus:ring-[#003A70] text-lg placeholder-gray-400" />
         <span class="absolute inset-y-0 right-4 flex items-center">
           <img src="svgs/Search%20-%20Gray.svg" alt="Search" class="h-6 w-6" />
         </span>
@@ -40,15 +40,15 @@
           <img src="svgs/filter-icon.svg" alt="Filter" class="h-8 w-8 group-hover:hidden" />
           <img src="svgs/filter-icon-hover.svg" alt="Filter Hover" class="h-8 w-8 hidden group-hover:block" />
         </div>
-        <div class="text-mckenzie-blue ml-2 text-lg font-medium">Filter</div>
+        <div class="text-[#003A70] ml-2 text-lg font-medium">Filter</div>
       </button>
     </form>
     <div class="business-directory">
 
 
       <div id="A-businesses" class="flex flex-col w-full mt-6">
-        <div class="text-xl font-bold text-mckenzie-blue">A</div>
-        <hr class="flex-grow border-t-1 border-mckenzie-blue !my-0" />
+        <div class="text-xl font-bold text-[#003A70]">A</div>
+        <hr class="flex-grow border-t-1 border-[#003A70] !my-0" />
       </div>
       <div class="flex flex-wrap gap-2 justify-center md:gap-0">
         <div hx-get="/components/business-card.html" hx-trigger="load" class="w-full"></div>
@@ -56,8 +56,8 @@
 
       </div>
       <div id="B-businesses" class="flex flex-col w-full mt-6">
-        <div class="text-xl font-bold text-mckenzie-blue">B</div>
-        <hr class="flex-grow border-t-1 border-mckenzie-blue !my-0" />
+        <div class="text-xl font-bold text-[#003A70]">B</div>
+        <hr class="flex-grow border-t-1 border-[#003A70] !my-0" />
       </div>
 
       <div class="flex flex-wrap gap-2 justify-center md:gap-0">

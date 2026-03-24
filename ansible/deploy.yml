@@ -1,0 +1,151 @@
+---
+# Van Alstyne EE Site — Safe Deploy Playbook
+# Usage:
+#   DRY RUN:  ansible-playbook -i inventory.ini deploy.yml --check --diff
+#   DEPLOY:   ansible-playbook -i inventory.ini deploy.yml
+#   SELECTIVE: ansible-playbook -i inventory.ini deploy.yml --tags templates
+#              ansible-playbook -i inventory.ini deploy.yml --tags assets
+#              ansible-playbook -i inventory.ini deploy.yml --tags css
+#              ansible-playbook -i inventory.ini deploy.yml --tags fonts
+#              ansible-playbook -i inventory.ini deploy.yml --tags svgs
+
+- name: Deploy Van Alstyne design changes
+  hosts: van_alstyne
+  become: true
+  vars:
+    project_root: "{{ playbook_dir }}/.."
+    web_root: /var/www/clients/van-alstyne.younger.host/current
+    templates_root: "{{ web_root }}/system/user/templates/default_site"
+    assets_root: "{{ web_root }}/assets"
+    backup_root: /var/www/clients/van-alstyne.younger.host/backups
+    timestamp: "{{ ansible_date_time.iso8601_basic_short }}"
+    ee_templates_src: "{{ project_root }}/ExpressionEngineFiles/ExpressionEngine7.5.19/system/user/templates/default_site"
+
+  tasks:
+    # ── BACKUP ──────────────────────────────────────────────────
+    - name: Create backup directory
+      ansible.builtin.file:
+        path: "{{ backup_root }}/{{ timestamp }}"
+        state: directory
+        mode: "0755"
+      tags: [backup, always]
+
+    - name: Backup current EE templates
+      ansible.builtin.copy:
+        src: "{{ templates_root }}/{{ item }}"
+        dest: "{{ backup_root }}/{{ timestamp }}/{{ item | replace('/', '_') }}"
+        remote_src: true
+      loop:
+        - _layouts.group/default.html
+        - _layouts.group/interior.html
+        - _partials.group/footer.html
+        - _partials.group/nav.html
+        - site.group/index.html
+        - site.group/page.html
+      ignore_errors: true
+      tags: [backup, always]
+
+    - name: Backup current output.css
+      ansible.builtin.copy:
+        src: "{{ assets_root }}/css/output.css"
+        dest: "{{ backup_root }}/{{ timestamp }}/output.css"
+        remote_src: true
+      ignore_errors: true
+      tags: [backup, always]
+
+    - name: Backup current SVGs (if they exist)
+      ansible.builtin.copy:
+        src: "{{ assets_root }}/svgs/{{ item }}"
+        dest: "{{ backup_root }}/{{ timestamp }}/{{ item }}"
+        remote_src: true
+      loop:
+        - Van-Alstyne-Footer-Logo.svg
+        - Document-Icon.svg
+        - Link-Icon.svg
+      ignore_errors: true
+      tags: [backup, always]
+
+    - name: Print backup location
+      ansible.builtin.debug:
+        msg: "Backup saved to {{ backup_root }}/{{ timestamp }}/"
+      tags: [backup, always]
+
+    # ── EE TEMPLATES ────────────────────────────────────────────
+    - name: Deploy layout templates
+      ansible.builtin.copy:
+        src: "{{ ee_templates_src }}/{{ item }}"
+        dest: "{{ templates_root }}/{{ item }}"
+        backup: true
+      loop:
+        - _layouts.group/default.html
+        - _layouts.group/interior.html
+      tags: [templates]
+
+    - name: Deploy partial templates
+      ansible.builtin.copy:
+        src: "{{ ee_templates_src }}/{{ item }}"
+        dest: "{{ templates_root }}/{{ item }}"
+        backup: true
+      loop:
+        - _partials.group/footer.html
+        - _partials.group/nav.html
+      tags: [templates]
+
+    - name: Deploy page templates
+      ansible.builtin.copy:
+        src: "{{ ee_templates_src }}/{{ item }}"
+        dest: "{{ templates_root }}/{{ item }}"
+        backup: true
+      loop:
+        - site.group/index.html
+        - site.group/page.html
+      tags: [templates]
+
+    # ── CSS ─────────────────────────────────────────────────────
+    - name: Deploy output.css
+      ansible.builtin.copy:
+        src: "{{ project_root }}/docs/output.css"
+        dest: "{{ assets_root }}/css/output.css"
+        backup: true
+      tags: [css, assets]
+
+    # ── SVGs ────────────────────────────────────────────────────
+    - name: Deploy new SVG icons
+      ansible.builtin.copy:
+        src: "{{ project_root }}/docs/svgs/{{ item }}"
+        dest: "{{ assets_root }}/svgs/{{ item }}"
+        backup: true
+      loop:
+        - Van-Alstyne-Footer-Logo.svg
+        - Document-Icon.svg
+        - Link-Icon.svg
+      tags: [svgs, assets]
+
+    # ── FONTS ───────────────────────────────────────────────────
+    - name: Ensure fonts directory exists
+      ansible.builtin.file:
+        path: "{{ assets_root }}/fonts"
+        state: directory
+        mode: "0755"
+      tags: [fonts, assets]
+
+    - name: Deploy font files
+      ansible.builtin.copy:
+        src: "{{ project_root }}/docs/fonts/"
+        dest: "{{ assets_root }}/fonts/"
+        backup: true
+      tags: [fonts, assets]
+
+    # ── SUMMARY ─────────────────────────────────────────────────
+    - name: Deployment summary
+      ansible.builtin.debug:
+        msg: |
+          ✅ Van Alstyne deploy complete!
+          📁 Backup: {{ backup_root }}/{{ timestamp }}/
+          📝 Templates: 6 files (2 layouts, 2 partials, 2 pages)
+          🎨 CSS: output.css
+          🖼️  SVGs: 3 icons (footer logo, document, link)
+          🔤 Fonts: Core Sans C family
+          
+          🔄 To rollback, restore from {{ backup_root }}/{{ timestamp }}/
+      tags: [always]

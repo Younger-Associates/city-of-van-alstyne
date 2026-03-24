@@ -1,0 +1,35 @@
+Task,Assignee,Status,"Screen Size","Page Type",Description,Screenshots
+"Navigation - mini nav bar color not correct",,"Not started",Global,Global,"needs to be #003A70 (inspect shows #003E7E)... any time DARK blue is used that is what the color is supposed to be",
+"Helpful Resources - button corners",,"Not started",Global,"Generic Page","please round the corners a bit more",F0AMQPQDP50
+"news page",,"Not started",Global,"Generic Page","need to get this page set up and link fixed on homepage https://van-alstyne.younger.host/news",
+"contact us page",cagle@youngerfirm.com,"Not started",Global,"Generic Page","no green",
+"employee headshot grid all wrong",,"Not started",Global,"Generic Page","see screenshot for what it is supposed to look like",F0ANK27T70Q
+"global blue button class",,"Not started",Global,Global,"i think the buttons are a little large (see healthcare page for example) so maybe reduce top bottom padding a bit... also round the corners more (match whatever you do for the documents/links helpful resources section)",
+"healthcare page",cagle@youngerfirm.com,"Not started",Global,"Generic Page","no green",
+"k-12 education page",cagle@youngerfirm.com,"Not started",Global,"Generic Page","No green! buttons look weird... maybe make the VAISD link a part of the documents/resources grid and not just a linked text button in body copy",
+"Helpful Resources - Link Icon",,"Not started",Global,"Generic Page","icon needs to be larger",F0AMQPQDP50
+"utilities page",cagle@youngerfirm.com,"Not started",Global,"Generic Page","No green! also not sure if this page would be better with just a dusting of keyword drops in some blurbs? if that makes sense lol can't think of the best way to word what i mean",
+"Map Room",cagle@youngerfirm.com,"Not started",Global,"Generic Page","There should be a short paragraph of content on this page that goes over why there is a map room and what each map shows.",
+"Accordtion/Table dropdowns",,"Not started",Global,"Generic Page","the accordion dropdown should be a blue + symbol to expand and a blue – to collapse, not red ^ or ⌄",
+"Higher Ed page",cagle@youngerfirm.com,"Not started",Global,"Generic Page","this page needs some content formatting work... https://van-alstyne.younger.host/doing-business-here/higher-education-training/
+
+do not use green at all, please add in some line separators above and below the grayson college specific content
+
+I also don't like how the completions table displays the data... maybe just leave it the one totals line that has degrees certs and total on the one row... then if they want a break down they can download the data... title for that table should be 2024 Program Completions (60-Mile Radius)",
+"Helpful Resources - Document Icon",,"Not started",Global,"Generic Page","the icon for the document icon is not correct",F0AMQPQDP50
+"Navigation - dropdown menu bold on hover",,"Not started",Global,Global,"all menu items should be 55 Medium until user hovers over the item which then bolds to 75 Extrabold",
+"Page Header Image",,"Not started",Global,"Generic Page","the header images are too tall, please narrow them down... 1920 x 1080 height should show as approx 200 px tall",
+"Mini Nav & Footer Social Icons",,"Not started",Global,Global,"Icons are too small",
+"Footer Logo not correct",,"Not started",Global,Global,"The footer logo is not correct, it should use the one where the ""City of"" and the line separators are white.","F0AMM5WQCGM,F0AMU65NDKN"
+"Core Sans C font not used?",,"Not started",Global,Global,"it looks like gotham was used instead of core sans c... were you able to access the font in the font link at the top?",
+"Demographics Section",,"Not started",Global,"Home Page","the font used for dempgraphic numbers is not correct, should be Quicksand Bold",
+"Button Fonts",,"Not started",Global,Global,"all button fonts should be Quicksand Bold... the are correct on the hero buttons but everywhere else the font isn't correct",
+"Gateway Section - copy/map spacing",,"Not started",Global,"Home Page","can you add more padding/spacing between the copy section and the map section? I would really like the line to break on the heading before texoma if possible (on 1920 x 1080 window size)",
+"Gateway Section - map",,"Not started",Global,"Home Page","is there a way to get the map to more closely resemble what is in the design? I understand if not, i don't hate the rounded corner card style, but prefer the split/section look
+
+also need to use this map <iframe src=""https://www.google.com/maps/d/embed?mid=1fQtXVq5-u75BtLb3wDMP2DLoAWjH6Wk&ehbc=2E312F"" width=""640"" height=""480""></iframe>",
+"Gateway Section - coloring",,"Not started",Global,"Home Page","Title and body copy should be dark blue (#003A70) and button color medium blue (#006EB3)",
+"Hero buttons - color sequence",,"Not started",Global,Global,"Not sure if user can select what color they want it to be, but if not, color sequence should be Medium Blue (#006EB3), Light Blue (#469DC8), Bright Red (#CE0037)",
+"NO TEAL on site anywhere",,"Not started",Global,Global,"Client does not want to use any TEAL on the site at tall change the following colors #00ACA0 > #469DC8     AND     #C9E9E7 > #DEF5FF     AND    #007672 > #1C719B",
+"Navigation - dropdown menu bg color",,"Not started",Desktop,Global,"bg color is supposed to be #EFEFEF (inspect shows #E5E7EB)",
+"home page buttons",cagle@youngerfirm.com,"Not started",Global,"Home Page","make sure all buttons are connected and working!",
